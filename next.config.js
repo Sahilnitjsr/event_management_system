@@ -5,7 +5,13 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = {
   images: {
-    domains: ['utfs.io', 'i.ibb.co', 'encrypted-tbn0.gstatic.com', 'www.google.com'],
+    domains: [
+      'utfs.io',
+      'i.ibb.co',
+      'encrypted-tbn0.gstatic.com',
+      'www.google.com',
+      'serpapi.com' // ✅ Add this line
+    ],
     remotePatterns: [
       {
         protocol: 'https',
@@ -14,6 +20,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'utfs.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'serpapi.com', // ✅ Optional but good to add
       }
     ],
   },

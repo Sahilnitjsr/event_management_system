@@ -12,8 +12,12 @@ export const headerLinks = [
     route: '/profile',
   },
   {
-    label: 'Events Recommendation',
+    label: 'Upcoming Events',
     route: '/eventsrecommendation',
+  },
+  {
+    label: 'Recommendations',
+    route: '/rec-event',
   },
 ]
 

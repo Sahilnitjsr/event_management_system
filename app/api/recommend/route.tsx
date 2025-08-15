@@ -7,8 +7,9 @@ export async function GET(req: NextRequest) {
     if (!place) {
         return NextResponse.json({ error: "Place parameter is required" }, { status: 400 });
     }
-
+    
     const apiKey = "32ebda1421d5ec8b5e922075ade9d9d3ac2ac3e2139bb74f064017b963784584";
+    // 32ebda1421d5ec8b5e922075ade9d9d3ac2ac3e2139bb74f064017b963784584
     const url = `https://serpapi.com/search.json?q=events+in+${encodeURIComponent(place)}&location=${encodeURIComponent(place)}&engine=google_events&api_key=${apiKey}`;
     
     try {

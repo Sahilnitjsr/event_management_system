@@ -7,7 +7,7 @@ export default function EventList() {
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [place, setPlace] = useState<string>("dhanbad");
+  const [place, setPlace] = useState<string>(" ");
 
   const fetchEvents = async (searchPlace: string) => {
     setLoading(true);
