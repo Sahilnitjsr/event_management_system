@@ -33,13 +33,18 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
   try {
     await connectToDatabase();
     console.log("connected to database");
-    if(userId)
-    {console.log(userId?.userId)}
-    // Convert userId to mongoose.ObjectId
-    const organizerId = new mongoose.Types.ObjectId(userId.userId);
-    
-    console.log(organizerId);
-    console.log(typeof organizerId); // Should print 'object'
+
+    if (userId) {
+      console.log("User ID:", userId);
+    } else {
+      throw new Error("No userId provided");
+    }
+
+    // Convert userId (string) to mongoose.ObjectId
+    const organizerId = new mongoose.Types.ObjectId(userId);
+
+    console.log("Organizer ObjectId:", organizerId);
+    console.log("Type of OrganizerId:", typeof organizerId);
 
     const newEvent = await Event.create({ 
       ...event, 
